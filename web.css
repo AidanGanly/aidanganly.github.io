@@ -1,0 +1,93 @@
+.html {
+  background:black;
+}
+
+
+@font-face{
+    font-family: "8bitoperator";
+    src: url("8bitoperator.ttf");
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px dotted white;
+    padding: 10px;
+}
+
+.question{
+  color:white;
+  font-size:25px;
+  font-family: "8bitoperator";
+  position: absolute;
+  left:45%;
+  bottom:70%;
+  overflow: hidden;
+  width: 30%;
+  animation: type 4s steps(60, end);
+
+}
+
+span{
+  animation: blink 1s infinite;
+}
+
+
+
+
+
+
+::selection{
+  background: black;
+}
+
+.enterHere {
+
+color:white;
+font-family:"8bitoperator";
+position:absolute;
+bottom:10%;
+left:25%;
+}
+
+.response{
+border-radius:0px;
+padding:10px;
+background:black;
+color:white;
+width:50%;
+border: 2px dotted white;
+position:absolute;
+left:50%;
+margin-left:-25%;
+bottom:5%;
+font-family:"8bitoperator";
+height:5%;
+}
+
+.submit{
+border-radius:0px;
+padding:10px;
+background:black;
+color:white;
+width:10%;
+border: 2px dotted white;
+position:absolute;
+left:90.1%;
+margin-left:-25%;
+bottom:5%;
+font-family:"8bitoperator";
+height:5%;
+font-size:100%;
+text-align:center;
+line-height:50%;
+}
+
+.photo{
+position:absolute;
+left:50%;
+margin-left:-25%;
+bottom:15%;
+height:75%;
+width:75%:
+}

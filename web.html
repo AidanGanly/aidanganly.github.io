@@ -1,0 +1,162 @@
+<html class="html">
+
+<title> -.* </title>
+<link rel="shortcut icon" type="image/png" href="favicon2.ico"/>
+<link rel="stylesheet" type="text/css" href="web.css">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<body class="center">
+
+<div class="question">
+<p id="programQuestion">What was your GCSE Maths grade?</p>
+</div>
+
+<img src="mrm2.png" class="photo">
+
+<br>
+<p class="enterHere">Click the correct response here! </p>
+
+<br>
+<table class="response">
+<tr>
+    <th id="uInputOne" onclick="submitAnswerOne()">> A*-B</th>
+    <th id="uInputTwo" onclick="submitAnswerTwo()">> C-U </th>
+ </tr>
+ <tr>
+    <th id="uInputThree" onclick="submitAnswerThree()"></th>
+    <th id="uInputFour" onclick="submitAnswerFour()"></th>
+ </tr>
+ 
+</table>
+
+<script>
+
+var x = 0;
+var points = 0;
+
+function questionNumber() {
+	
+	if (x == 0) {submitQuestionOne()}
+	else if (mathsGrade == 0 && computingGrade == 0) {continueUnlikely()}
+	else if (x == 1) {submitQuestionTwo()}
+	else if (x == 2) {submitQuestionThree()}
+	else if (x == 3) {submitQuestionFour()}
+	else if (x == 4) {submitQuestionFive()}
+	else if (x == 5) {submitFinale()};
+	
+};
+
+function submitAnswerOne() {
+	
+	if (x == 0) {mathsGrade = 1}
+	else if (x == 1) {computingGrade = 1}
+	else if (x == 2) {points = points+60}
+	else if (x == 3) {points = points+100}
+	else if (x == 4) {points = points+500}
+	else if (x == 5) {points = points+300}
+	questionNumber()
+
+};
+
+function submitAnswerTwo() {
+	
+	if (x == 0) {mathsGrade = 0}
+	else if (x == 1) {computingGrade = 0}
+	else if (x == 2) {points = points+60}
+	else if (x == 3) {points = points+150}
+	else if (x == 4) {points = points}
+	else if (x == 5) {points = points}
+	questionNumber()
+
+};
+
+function submitAnswerThree() {
+	
+	if (x == 2) {points = points+100}
+	else if (x == 3) {points = points+200}
+	questionNumber()
+
+};
+
+function submitAnswerFour() {
+	
+	if (x == 2) {continueUnlikely()}
+	else if (x == 3) {
+	points = points+300;
+	questionNumber()
+	}
+
+};
+
+function continueUnlikely()
+{
+document.getElementById("programQuestion").innerHTML = "You are unlikely to be able to continue this career path";
+document.getElementById("uInputOne").innerHTML = "";
+document.getElementById("uInputTwo").innerHTML = "";
+document.getElementById("uInputThree").innerHTML = "";
+document.getElementById("uInputFour").innerHTML = "";
+};
+
+function submitQuestionOne()
+{
+document.getElementById("programQuestion").innerHTML = "What was your GCSE Computing grade?";
+document.getElementById("uInputOne").innerHTML = "> A*-B";
+document.getElementById("uInputTwo").innerHTML = "> C-U";
+x = 1;
+};
+
+
+
+function submitQuestionTwo()
+{
+document.getElementById("programQuestion").innerHTML = "Are you willing to take BTEC Computing or A-Level Maths?";
+document.getElementById("uInputOne").innerHTML = "> BTEC COMPUTING";
+document.getElementById("uInputTwo").innerHTML = "> A-LEVEL MATHS";
+document.getElementById("uInputThree").innerHTML = "> BOTH";
+document.getElementById("uInputFour").innerHTML = "> NO";
+x = 2;
+}
+
+function submitQuestionThree()
+{
+document.getElementById("programQuestion").innerHTML = "What grades do you think you can achieve at BTEC?";
+document.getElementById("uInputOne").innerHTML = "> PASS";
+document.getElementById("uInputTwo").innerHTML = "> MERIT";
+document.getElementById("uInputThree").innerHTML = "> DISTINCTION";
+document.getElementById("uInputFour").innerHTML = "> DISTINCTION*";
+x = 3;
+};
+
+function submitQuestionFour()
+{
+document.getElementById("programQuestion").innerHTML = "Have you written any games and released them on web or app store by the time you start applying for jobs?";
+document.getElementById("uInputOne").innerHTML = "> YES";
+document.getElementById("uInputTwo").innerHTML = "> NO";
+document.getElementById("uInputThree").innerHTML = "";
+document.getElementById("uInputFour").innerHTML = "";
+x = 4;
+};
+
+function submitQuestionFive()
+{
+document.getElementById("programQuestion").innerHTML = "Will you have any relevant internship or work experience by the time you apply for a job?";
+document.getElementById("uInputOne").innerHTML = "> YES";
+document.getElementById("uInputTwo").innerHTML = "> NO";
+document.getElementById("uInputThree").innerHTML = "";
+document.getElementById("uInputFour").innerHTML = "";
+x = 5;
+};
+
+function submitFinale()
+{
+	if (points<300) {document.getElementById("programQuestion").innerHTML = "You are somewhat unlikely to be able to continue in this career path";}
+	else if (points<1000) {document.getElementById("programQuestion").innerHTML = "You may be able to continue this career path, but you may find regular work difficult to find";}
+	else if (points>1000) {document.getElementById("programQuestion").innerHTML = "You have a chance in this career path, but be aware it is very competitive";}
+document.getElementById("uInputOne").innerHTML = "";
+document.getElementById("uInputTwo").innerHTML = "";
+document.getElementById("uInputThree").innerHTML = "";
+document.getElementById("uInputFour").innerHTML = "";
+x = 5;
+};
+</script>
+</body>
+</html>
